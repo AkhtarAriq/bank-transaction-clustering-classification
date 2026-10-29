@@ -1,0 +1,38 @@
+# Python environments and generated caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local credentials and configuration
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+
+# Editors and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.log
+*.tmp
+~$*
+
+# Local agent analysis and temporary publishing files
+.agents/
+.codex/
+graphify-out/
+.publish-tmp/
+
+# Keep the submitted notebooks, derived CSVs, and small Joblib .h5 models tracked.
