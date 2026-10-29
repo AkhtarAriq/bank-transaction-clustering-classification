@@ -1,0 +1,4 @@
+Target,TransactionType,Location,Channel,CustomerOccupation,AgeGroup
+0,Debit,Oklahoma City,Branch,Engineer,Dewasa
+1,Debit,Tucson,Branch,Student,Muda
+2,Debit,Charlotte,Branch,Doctor,Muda

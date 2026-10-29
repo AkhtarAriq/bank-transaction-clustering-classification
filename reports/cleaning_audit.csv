@@ -1,0 +1,5 @@
+stage,rows_retained,rows_removed
+Source,2537,0
+Complete records,2156,381
+Deduplicated,2135,21
+IQR filtered,1945,190

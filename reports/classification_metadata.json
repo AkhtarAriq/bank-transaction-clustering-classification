@@ -1,0 +1,42 @@
+{
+  "input_file": "data_clustering_inverse.csv",
+  "input_sha256": "f85b4e593529c98b9a19a1351265cc9c7a56dac67c39777d2637607045aae3fb",
+  "target_definition": "K-Means assignments from full-dataset exploratory clustering",
+  "training_rows": 1556,
+  "test_rows": 389,
+  "feature_columns": [
+    "TransactionAmount",
+    "TransactionType",
+    "Location",
+    "Channel",
+    "CustomerAge",
+    "CustomerOccupation",
+    "TransactionDuration",
+    "LoginAttempts",
+    "AccountBalance",
+    "AgeGroup"
+  ],
+  "random_state": 42,
+  "test_size": 0.2,
+  "cross_validation": {
+    "folds": 5,
+    "stratified": true,
+    "shuffle": true
+  },
+  "selection_metric": "accuracy",
+  "best_cv_accuracy": 1.0,
+  "best_parameters": {
+    "classifier__max_depth": null,
+    "classifier__min_samples_split": 2,
+    "classifier__n_estimators": 50
+  },
+  "python": "3.12.4",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "joblib": "1.6.0"
+  }
+}

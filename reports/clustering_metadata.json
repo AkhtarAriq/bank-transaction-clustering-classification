@@ -1,0 +1,36 @@
+{
+  "source": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbg5WVW6W3c8SPNUGc3A3AL-AG32TPEQGpdzARfNICMsLFI0LQj0jporhsLCeVhkN5AoRsTkn08AYl/pub?output=csv",
+  "source_dataframe_sha256": "470984f41d4bf7ffc45622396aa097dbdee16ff00fe80655f8a3937871cd4e7f",
+  "source_rows": 2537,
+  "retained_rows": 1945,
+  "feature_columns": [
+    "TransactionAmount",
+    "TransactionType",
+    "Location",
+    "Channel",
+    "CustomerAge",
+    "CustomerOccupation",
+    "TransactionDuration",
+    "LoginAttempts",
+    "AccountBalance",
+    "AgeGroup"
+  ],
+  "random_state": 42,
+  "kmeans_initializations": 10,
+  "reference_clusters": 3,
+  "highest_silhouette_clusters": 2,
+  "reference_silhouette": 0.4946877884701443,
+  "pca_explained_variance_ratio": [
+    0.9573696691609862,
+    0.013767304387439722
+  ],
+  "python": "3.12.4",
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.11.2",
+    "seaborn": "0.13.2",
+    "joblib": "1.6.0"
+  }
+}

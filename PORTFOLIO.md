@@ -6,34 +6,32 @@ Bank Transaction Clustering & Classification
 
 ## Public project summary
 
-Developed a two-stage machine-learning workflow to segment bank transactions and predict their cluster assignments. Explored 2,537 transaction records and produced 1,945 cleaned samples through missing-value removal, deduplication, outlier filtering, categorical encoding, scaling, and age-group feature engineering. Applied K-Means to identify three clusters, achieving a recorded silhouette score of 0.496, and used PCA and inverse-transformed feature summaries to explore the results. Compared Decision Tree and Random Forest classifiers and tuned Random Forest with five-fold grid search. The saved notebook evaluation reports approximately 99% Random Forest test accuracy against cluster-generated labels. The project demonstrates data preparation, unsupervised learning, supervised model comparison, evaluation, and interpretation.
+Developed a reproducible machine-learning study to segment bank transactions and predict the resulting cluster assignments. Explored 2,537 records and retained 1,945 samples through validated cleaning, outlier filtering, categorical encoding, scaling, and age-group feature engineering. Compared K-Means cluster counts, retained a three-cluster reference with a silhouette score of 0.495, and examined PCA projections, loadings, and readable cluster profiles. Built complete Decision Tree and Random Forest pipelines with training-only categorical preprocessing and five-fold hyperparameter tuning. Although the classifiers achieved perfect agreement on the 389-row classification holdout, a diagnostic showed that location encoding largely determined the labels. The project demonstrates reproducible experimentation, model evaluation, artifact management, and critical interpretation of machine-learning results.
 
 ## Short card explanation
 
-Segmented bank transactions with K-Means and trained Random Forest models to predict the resulting groups.
+Explored bank transaction clusters with reproducible pipelines and diagnosed the limits of perfect cluster-label prediction.
 
 ## Technologies
 
-Python, pandas, NumPy, scikit-learn, Matplotlib, Seaborn, Yellowbrick, Joblib, Jupyter Notebook, Google Colab.
+Python, pandas, NumPy, scikit-learn, Matplotlib, Seaborn, Joblib, Jupyter Notebook, JupyterLab.
 
-## Outputs to showcase
+## Suggested showcase order
 
-| Priority | Output | Where to find it | What it demonstrates |
-| --- | --- | --- | --- |
-| Cover | Correlation heatmap | [assets/correlation-heatmap.png](assets/correlation-heatmap.png) | Exploration of relationships between numerical features |
-| Gallery | K-Means silhouette comparison by cluster count | [assets/kmeans-elbow.png](assets/kmeans-elbow.png) | Comparing candidate cluster counts; the plot favors two, while the final estimator uses three |
-| Gallery | Numerical feature distributions | [assets/numerical-distributions.png](assets/numerical-distributions.png) | Understanding skew, spread, and data preparation needs |
-| Gallery | Transaction amount by occupation | [assets/transaction-amount-by-occupation.png](assets/transaction-amount-by-occupation.png) | Comparison of transaction distributions across customer categories |
-| Results | Model comparison table and per-class classification reports | README results table and classification notebook, evaluation cells | Decision Tree versus Random Forest, including precision, recall, F1-score, and test support |
-| Interpretation | Inverse-transformed cluster summary | Clustering notebook, cell 77 (zero-based), and `data_clustering_inverse.csv` | Explaining clusters using original feature units |
-| Supporting artifacts | Both completed notebooks, two labeled CSV exports, and five saved estimators/search objects | Repository root | A traceable workflow from exploration to trained models |
+| Placement | Output | What it communicates |
+| --- | --- | --- |
+| Cover | [PCA cluster projection](assets/pca-clusters.png) | Three distinct groups, centroid positions, and explained variance; discuss the location-dominated first component |
+| Gallery | [Cluster-count comparison](assets/kmeans-elbow.png) | Inertia and silhouette evidence; two clusters score best while three are retained as the reference experiment |
+| Gallery | [Correlation heatmap](assets/correlation-heatmap.png) | Exploratory relationships among numerical features |
+| Gallery | [Feature distributions](assets/numerical-distributions.png) and [occupation boxplot](assets/transaction-amount-by-occupation.png) | Distribution shape and the motivation for examining preprocessing choices |
+| Evaluation | [Model comparison](assets/classification-model-comparison.png) and [confusion matrices](assets/classification-confusion-matrices.png) | Actual held-out cluster-label predictions, presented with their limitations |
+| Interpretation | [Cluster summary](reports/cluster_summary.csv) and the location diagnostic in the classification notebook | Measured differences in original units and an explanation for perfect label agreement |
+| Reproducibility | Both notebooks, [run metadata](reports/clustering_metadata.json), [search results](reports/grid_search_results.csv), tests, and fitted model artifacts | A traceable workflow that another reader can execute and inspect |
 
-## Presentation notes
+## Presentation guidance
 
-- Describe the task as transaction segmentation and prediction of cluster assignments. The target labels are generated by K-Means, not verified fraud outcomes.
-- Quote the roughly 99% score as a recorded result on 389 held-out classification rows. Clustering and its preprocessing used the full dataset before that split, so the result is not an independent end-to-end generalization estimate.
-- Report tuning as an experiment; the rounded baseline and tuned Random Forest accuracies are both 99%.
-- Explain the difference between the plot's preferred two clusters and the final three-cluster experiment. The notebook does not record a selection rationale.
-- The existing PCA scatter plot repeats colors across three clusters. Correct its palette before adding it to a public gallery; the exported showcase images exclude it.
-- Treat cluster personas as exploratory descriptions. The cluster means alone do not prove technology proficiency or customer value.
-- A live demo is not included. Link visitors to the notebooks and README through the GitHub repository.
+- Identify the task as segmentation and prediction of generated cluster labels. No verified fraud target is present.
+- Perfect classification agreement is not evidence of a validated financial predictor. All 43 location categories map to one cluster each in the current run.
+- Explain that the original integer category encoding strongly shapes the clusters, and treat alternative feature representations as future work.
+- Use the current reports when citing results: the portfolio edition refits K-Means with ten initializations and fits classification encoders inside cross-validation.
+- There is no live application or production inference service. Link to the executable notebooks and README.

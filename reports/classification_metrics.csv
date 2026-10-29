@@ -1,0 +1,4 @@
+model,accuracy,precision_weighted,recall_weighted,f1_weighted
+Decision Tree,1.0,1.0,1.0,1.0
+Random Forest,1.0,1.0,1.0,1.0
+Tuned Random Forest,1.0,1.0,1.0,1.0
